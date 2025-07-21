@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing - EduCourse</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="pricing.html" class="active">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="main">
+      <h1>Our Pricing Plans</h1>
+      <div class="pricing-cards">
+        <div class="card">
+          <h2>Basic</h2>
+          <p class="price">$999/mo</p>
+          <ul>
+            <li>Access to 10 courses</li>
+            <li>Email support</li>
+            <li>Limited certificates</li>
+          </ul>
+          <button>Choose Plan</button>
+        </div>
+
+        <div class="card featured">
+          <h2>Pro</h2>
+          <p class="price">$1999/mo</p>
+          <ul>
+            <li>Unlimited course access</li>
+            <li>Priority support</li>
+            <li>Unlimited certificates</li>
+          </ul>
+          <button>Choose Plan</button>
+        </div>
+
+        <div class="card">
+          <h2>Enterprise</h2>
+          <p class="price">Contact Us</p>
+          <ul>
+            <li>Team licenses</li>
+            <li>Admin dashboard</li>
+            <li>Dedicated account manager</li>
+          </ul>
+          <button>Contact Sales</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="billing-toggle">
+      <span>Billing:</span>
+      <button onclick="switchBilling('monthly')" class="billing-btn active">
+        Monthly
+      </button>
+      <button onclick="switchBilling('yearly')" class="billing-btn">
+        Yearly
+      </button>
+    </div>
+
+    <script>
+      function switchBilling(plan) {
+        const prices = document.querySelectorAll(".price");
+        const buttons = document.querySelectorAll(".billing-btn");
+
+        // Toggle active class on buttons
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        document
+          .querySelector(`.billing-btn[onclick="switchBilling('${plan}')"]`)
+          .classList.add("active");
+
+        // Update pricing values
+        prices.forEach((price) => {
+          const monthly = price.getAttribute("data-monthly");
+          const yearly = price.getAttribute("data-yearly");
+
+          if (plan === "monthly") {
+            price.innerText =
+              monthly === "Contact Us" ? monthly : `$${monthly}/mo`;
+          } else {
+            price.innerText =
+              yearly === "Contact Us" ? yearly : `$${yearly}/yr`;
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses - EduCourse</title>
+    <link rel="stylesheet" href="style5.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html" class="active">Courses</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="main">
+      <h1>Explore Our Courses</h1>
+      <div class="course-grid">
+        <!-- Course Card 1 -->
+        <div class="course-card">
+          <h3>💻 Web Development</h3>
+          <p>
+            Master HTML, CSS, JavaScript and build responsive websites from
+            scratch.
+          </p>
+          <span class="tag beginner">Beginner</span>
+          <button>Enroll Now</button>
+        </div>
+
+        <!-- Course Card 2 -->
+        <div class="course-card">
+          <h3>🧠 Data Science</h3>
+          <p>
+            Learn Python, data visualization, and machine learning techniques.
+          </p>
+          <span class="tag intermediate">Intermediate</span>
+          <button>Enroll Now</button>
+        </div>
+
+        <!-- Course Card 3 -->
+        <div class="course-card">
+          <h3>📱 App Development</h3>
+          <p>Create cross-platform mobile apps using Flutter and Firebase.</p>
+          <span class="tag advanced">Advanced</span>
+          <button>Enroll Now</button>
+        </div>
+
+        <!-- Course Card 4 -->
+        <div class="course-card">
+          <h3>🎨 UI/UX Design</h3>
+          <p>
+            Design user-friendly interfaces and improve product experiences.
+          </p>
+          <span class="tag beginner">Beginner</span>
+          <button>Enroll Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-buttons">
+      <button onclick="filterCourses('all')" class="filter-btn active">
+        All
+      </button>
+      <button onclick="filterCourses('beginner')" class="filter-btn">
+        Beginner
+      </button>
+      <button onclick="filterCourses('intermediate')" class="filter-btn">
+        Intermediate
+      </button>
+      <button onclick="filterCourses('advanced')" class="filter-btn">
+        Advanced
+      </button>
+    </div>
+
+    <script>
+      function filterCourses(level) {
+        const cards = document.querySelectorAll(".course-card");
+        const buttons = document.querySelectorAll(".filter-btn");
+
+        // Reset active button
+        buttons.forEach((btn) => btn.classList.remove("active"));
+
+        // Set current button as active
+        document
+          .querySelector(`[onclick="filterCourses('${level}')"]`)
+          .classList.add("active");
+
+        cards.forEach((card) => {
+          const tag = card.querySelector(".tag");
+          const tagClass = tag.classList[1]; // beginner, intermediate, advanced
+
+          if (level === "all" || tagClass === level) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
