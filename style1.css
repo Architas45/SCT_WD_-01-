@@ -1,0 +1,58 @@
+.sidebar{
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+}
+
+.hero-section {
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  color: white;
+  padding: 40px 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.hero-section h1 {
+  font-size: 36px;
+  margin-bottom: 5px;
+}
+
+.hero-section p {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-text h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+

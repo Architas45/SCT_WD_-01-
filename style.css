@@ -1,0 +1,179 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #333;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li a {
+  padding: 10px;
+  color: rgb(247, 241, 241);
+  text-decoration: none;
+}
+
+.nav-links li a:hover {
+  background: #444;
+  text-decoration: underline;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.logo img{
+    width: 75px;
+    padding: 0 8px;
+    height: 75px;
+}
+
+.logo{
+    display: flex;
+    align-items: left baseline;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.hero{
+    background: linear-gradient(to right, #68a6b6, #a6d0e0, #c1dce7);
+    text-align: center;
+    padding: 100px 20px 60px;
+    margin-top: 80px;
+    color: white;
+}
+
+.hero h1{
+    font-size: 36px;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.hero p{
+    font-size: 18px;
+    margin-top: 10px;
+    color: #666;
+}
+
+.hero img{
+    margin-top: 20px;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-btn{
+    display: inline-block;
+    background: #007BFF;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover{
+     background-color: #0056b3;
+}
+.section{
+    padding: 40px 20px;
+}
+
+.features.feature-grid ,.pricing-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+.feature-item, .price-card{
+    flex: 1 1 250px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.price-card.popular{
+    border: 2px solid #186dc7;
+}
+
+.price{
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.curriculum-list li{
+    margin-bottom: 10px;
+}
+
+.blockquote{
+    margin: 20px auto;
+    max-width: 600px;
+    font-style: italic;
+}
+
+.final-cta{
+    background: rgba(0, 0, 0, 0.555);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-links a{
+    color: #ccc;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* Responsive Breakpoint */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+
+    .feature-grid, .pricing-grid{
+        flex-direction: column;
+    }
+    body{
+        background-color: rgb(243, 245, 252);
+    }
+ }
+
+html{
+    scroll-behavior: smooth;
+}
